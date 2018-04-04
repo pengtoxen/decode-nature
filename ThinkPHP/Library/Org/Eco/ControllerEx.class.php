@@ -49,7 +49,7 @@ class ControllerEx extends Controller
         return \Org\Eco\Request::instance()->isAjax();
     }
 
-    protected function show($content = '', $msg = '')
+    protected function show($content = '', $msg = 'ok')
     {
         $ret = [
             'code' => 0,
@@ -60,7 +60,7 @@ class ControllerEx extends Controller
     }
 
 
-    protected function error($content = '', $msg = '')
+    protected function error($content = '', $msg = 'fail')
     {
         $ret = [
             'code' => 1,
