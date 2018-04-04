@@ -4,7 +4,7 @@ namespace Admin\Controller;
 
 use Common\Common\Util;
 use Common\Common\Pagination;
-use Common\Common\UUID;
+use Common\Common\ID;
 use Common\Constant\AdminTbl;
 
 class FossilController extends \Admin\Common\AdminController
@@ -31,6 +31,7 @@ class FossilController extends \Admin\Common\AdminController
         }
         $o->where($w);
         $o->limit(Pagination::instance()->getLimit());
+        $o->order('ctime desc');
         $ret = $o->select();
         $o = M()->table('dn_fossil');
         $o->where($w);
@@ -45,6 +46,7 @@ class FossilController extends \Admin\Common\AdminController
     function operate()
     {
         $raw = $this->getFormParam();
+        echo '<pre/>';print_r($raw);die;
         $o = M()->table('dn_fossil');
         if (isset($raw['classification']) && $raw['classification']) {
             $raw['classification'] = explode("\n", $raw['classification']);
@@ -71,7 +73,7 @@ class FossilController extends \Admin\Common\AdminController
             'district_id_arr' => isset($raw['district']) ? implode("\n", $raw['district']) : 0,
             'geo_age_id' => isset($raw['geo_age_id']) ? $raw['geo_age_id'] : 0,
             'geo_age_id_arr' => isset($raw['geo_age']) ? implode("\n", $raw['geo_age']) : 0,
-            'serial_no' => UUID::v4(),
+            'serial_no' => ID::specimenNo(),
             'name_zh' => isset($raw['name_zh']) ? $raw['name_zh'] : '',
             'name_en' => isset($raw['name_en']) ? $raw['name_en'] : '',
             'owner' => isset($raw['owner']) ? $raw['owner'] : '',
@@ -166,7 +168,7 @@ class FossilController extends \Admin\Common\AdminController
                 'description' => $ret['description'] ?: '',
             ],
             'photoInfo' => [
-                'photoInfo' => $ret['photoInfo'] ?: '',
+                'photo' => $ret['photoInfo'] ?: '',
                 'restore_photo' => $ret['restore_photo'] ?: '',
             ],
             'storage' => [

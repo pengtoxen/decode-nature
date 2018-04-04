@@ -2,9 +2,9 @@
 
 namespace Common\Common;
 
-class UUID
+class ID
 {
-    public static function v3($namespace, $name)
+    public static function UUIDv3($namespace, $name)
     {
         if (!self::is_valid($namespace)) return false;
         // Get hexadecimal components of namespace
@@ -34,7 +34,7 @@ class UUID
         );
     }
 
-    public static function v4()
+    public static function UUIDv4()
     {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
             // 32 bits for "time_low"
@@ -53,7 +53,7 @@ class UUID
         );
     }
 
-    public static function v5($namespace, $name)
+    public static function UUIDv5($namespace, $name)
     {
         if (!self::is_valid($namespace)) return false;
         // Get hexadecimal components of namespace
@@ -88,9 +88,17 @@ class UUID
         return preg_match('/^\{?[0-9a-f]{8}\-?[0-9a-f]{4}\-?[0-9a-f]{4}\-?' .
                 '[0-9a-f]{4}\-?[0-9a-f]{12}\}?$/i', $uuid) === 1;
     }
+
+    public static function specimenNo()
+    {
+        $no = date('YmdHi');
+        $no .= str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
+        return $no;
+    }
 }
+
 // 举例
-$v3uuid = UUID::v3('1546058f-5a25-4334-85ae-e68f2a44bbaf', 'SomeRandomString');
-$v5uuid = UUID::v5('1546058f-5a25-4334-85ae-e68f2a44bbaf', 'SomeRandomString');
+$v3uuid = ID::UUIDv3('1546058f-5a25-4334-85ae-e68f2a44bbaf', 'SomeRandomString');
+$v5uuid = ID::UUIDv5('1546058f-5a25-4334-85ae-e68f2a44bbaf', 'SomeRandomString');
 // Pseudo-random UUID
-$v4uuid = UUID::v4();
+$v4uuid = ID::UUIDv4();

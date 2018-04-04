@@ -27,12 +27,10 @@ class OpenController extends \Admin\Common\AdminController
 
     public function upload()
     {
-        $res = Util::upload(['savePath' => 'my/fossil/']);
+        $res = Util::upload(['savePath' => 'Specimen/Fossil/']);
         if (!$res[_c]) {
-            echo json_encode($res['_m']);
-            die;
+            $this->error($res['_m']);
         }
-        echo json_encode($res);
-        die;
+        $this->show($res);
     }
 }

@@ -181,7 +181,7 @@ class Util
             'exts' => isset($param['exts']) ? $param['exts'] : ['jpg', 'gif', 'png', 'jpeg'], //允许上传的文件后缀
             'autoSub' => isset($param['autoSub']) ? $param['autoSub'] : true, //自动子目录保存文件
             'subName' => isset($param['subName']) ? $param['subName'] : ['date', 'Y-m-d'], //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
-            'rootPath' => isset($param['rootPath']) ? $param['rootPath'] : 'uploads/', //保存根路径
+            'rootPath' => isset($param['rootPath']) ? $param['rootPath'] : 'Uploads/', //保存根路径
             'savePath' => isset($param['savePath']) ? $param['savePath'] : '',//保存路径
         ];
         $upload = new \Think\Upload($config);
