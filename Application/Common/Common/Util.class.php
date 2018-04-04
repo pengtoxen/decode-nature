@@ -277,23 +277,27 @@ class Util
      *  ['id' => 5, 'pid' => 3, 'name' => 'rose'],
      *  ];
      */
-    public static function toTree($data)
+    public static function toTree($arr, $start = 0, $id = 'id', $pid = 'pid', $children = 'children')
     {
-        $tree = [];
-        foreach ($data as $category) {
-            $tree[$category['id']] = $category;
-            $tree[$category['id']]['children'] = array();
+        if (!is_array($arr)) {
+            return '原数据不是数组';
         }
-        foreach ($tree as $k => $item) {
-            if ($item['pid'] == 0) {
-                $tree[$item['id']] = $item;
+        if (count($arr) < 1) {
+            return $arr;
+        }
+        //格式化
+        $data = $tree = [];
+        foreach ($arr as $v) {
+            $data[$v[$id]] = $v;
+        }
+        ksort($data);
+        //树形结构
+        foreach ($data as $key => $value) {
+            if ($value[$pid] == $start) {
+                $tree[] = &$data[$value[$id]];//存的是内存地址
             } else {
-                $tree[$item['pid']]['children'][] = &$tree[$k];
-            }
-        }
-        foreach ($tree as $key => $category) {
-            if ($category['pid'] != 0) {
-                unset($tree[$key]);
+                //数据变更,$return根据内存地址取的数据也变化了
+                $data[$value[$pid]][$children][] = &$data[$value[$id]];
             }
         }
         return $tree;

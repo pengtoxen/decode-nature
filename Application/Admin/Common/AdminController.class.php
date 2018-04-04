@@ -21,4 +21,14 @@ class AdminController extends \Org\Eco\CRUDController
             exit(0);
         }
     }
+
+    public function getFormParam()
+    {
+        if (isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
+            $final = $GLOBALS['HTTP_RAW_POST_DATA'];
+        } else {
+            $final = file_get_contents('php://input');
+        }
+        return json_decode($final, true);
+    }
 }

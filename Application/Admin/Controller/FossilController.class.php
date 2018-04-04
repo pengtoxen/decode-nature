@@ -3,6 +3,9 @@
 namespace Admin\Controller;
 
 use Common\Common\Util;
+use Common\Common\Pagination;
+use Common\Common\UUID;
+use Common\Constant\AdminTbl;
 
 class FossilController extends \Admin\Common\AdminController
 {
@@ -13,11 +16,7 @@ class FossilController extends \Admin\Common\AdminController
 
     public function lists()
     {
-        $page = I('page');
-        $limit = I('limit', 20);
         $o = M()->table('dn_fossil');
-        $o = $o->page($page);
-        $o = $o->limit($limit);
         $name = I('name_zh/s');
         if ($name) {
             $w['name_zh'] = ['like', '%' . $name . '%'];
@@ -30,9 +29,11 @@ class FossilController extends \Admin\Common\AdminController
         if ($geo_age) {
             $w['geo_age_id'] = end(explode("\n", $geo_age));
         }
-        $o = $o->where($w);
+        $o->where($w);
+        $o->limit(Pagination::instance()->getLimit());
         $ret = $o->select();
         $o = M()->table('dn_fossil');
+        $o->where($w);
         $total = $o->count();
         $ret = [
             'lists' => $ret,
@@ -43,30 +44,34 @@ class FossilController extends \Admin\Common\AdminController
 
     function operate()
     {
-        if (isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
-            $final = $GLOBALS['HTTP_RAW_POST_DATA'];
-        } else {
-            $final = file_get_contents('php://input');
-        }
-        $raw = json_decode($final, true);
+        $raw = $this->getFormParam();
         $o = M()->table('dn_fossil');
         if (isset($raw['classification']) && $raw['classification']) {
             $raw['classification'] = explode("\n", $raw['classification']);
+            $raw['classification_id'] = end($raw['classification']);
+            $info = D('FClassification')->info($raw['classification_id']);
+            $raw['classification_name'] = $info ? $info['name_zh'] : '';
         }
         if (isset($raw['district']) && $raw['district']) {
             $raw['district'] = explode("\n", $raw['district']);
+            $raw['district_id'] = end($raw['district']);
+            $info = D('Location')->locationName($raw['district']);
+            $raw['district_name'] = $info ?: '';
         }
         if (isset($raw['geo_age']) && $raw['geo_age']) {
             $raw['geo_age'] = explode("\n", $raw['geo_age']);
+            $raw['geo_age_id'] = end($raw['geo_age']);
+            $info = D('GeoAge')->geoAgeName($raw['geo_age']);
+            $raw['geo_age_name'] = $info ?: '';
         }
         $add = [
-            'classification_id' => isset($raw['classification']) ? end($raw['classification']) : 0,
+            'classification_id' => isset($raw['classification_id']) ? $raw['classification_id'] : 0,
             'classification_id_arr' => isset($raw['classification']) ? implode("\n", $raw['classification']) : 0,
-            'district_id' => isset($raw['district']) ? end($raw['district']) : 0,
+            'district_id' => isset($raw['district_id']) ? $raw['district_id'] : 0,
             'district_id_arr' => isset($raw['district']) ? implode("\n", $raw['district']) : 0,
-            'geo_age_id' => isset($raw['geo_age']) ? end($raw['geo_age']) : 0,
+            'geo_age_id' => isset($raw['geo_age_id']) ? $raw['geo_age_id'] : 0,
             'geo_age_id_arr' => isset($raw['geo_age']) ? implode("\n", $raw['geo_age']) : 0,
-            'serial_no' => uniqid(),
+            'serial_no' => UUID::v4(),
             'name_zh' => isset($raw['name_zh']) ? $raw['name_zh'] : '',
             'name_en' => isset($raw['name_en']) ? $raw['name_en'] : '',
             'owner' => isset($raw['owner']) ? $raw['owner'] : '',
@@ -89,6 +94,10 @@ class FossilController extends \Admin\Common\AdminController
         $id = $raw['id'];
         if (!$id) {
             $ret = $o->add($add);
+            if ($ret === false) {
+                $this->error();
+            }
+            $this->show($ret);
         } else {
             $w = ['id' => $id];
             $o->where($w);
@@ -111,10 +120,13 @@ class FossilController extends \Admin\Common\AdminController
             if (isset($up['get_time'])) {
                 $up['get_time'] = strtotime($raw['get_time']);
             }
+            $up['ctime'] = time();
             $r = $o->save($up);
+            if ($r === false) {
+                $this->error();
+            }
             return $this->detail($id);
         }
-        $this->show($ret);
     }
 
     public function detail($id = 0)
@@ -124,7 +136,7 @@ class FossilController extends \Admin\Common\AdminController
         $w = [
             'id' => $id,
         ];
-        $o = $o->where($w);
+        $o->where($w);
         $ret = $o->find();
         $ret = [
             'default' => [
@@ -169,14 +181,42 @@ class FossilController extends \Admin\Common\AdminController
         $this->show($ret);
     }
 
-    public function upload()
+    public function switcher()
     {
-        $res = Util::upload(['savePath' => 'my/fossil/']);
-        if (!$res[_c]) {
-            echo json_encode($res['_m']);
-            die;
+        $raw = $this->getFormParam();
+        if (!$raw['id']) {
+            $this->error();
         }
-        echo json_encode($res);
-        die;
+        $o = M()->table(AdminTbl::TBL_DN_FOSSIL);
+        $w = [
+            'id' => $raw['id'],
+        ];
+        $o->where($w);
+        $up = [
+            $raw['field'] => $raw['value'],
+        ];
+        $r = $o->save($up);
+        if ($r === false) {
+            $this->error();
+        }
+        $this->show();
+    }
+
+    public function delete()
+    {
+        $raw = $this->getFormParam();
+        if (!$raw['id']) {
+            $this->error();
+        }
+        $o = M()->table(AdminTbl::TBL_DN_FOSSIL);
+        $w = [
+            'id' => $raw['id'],
+        ];
+        $o->where($w);
+        $r = $o->delete();
+        if ($r === false) {
+            $this->error();
+        }
+        $this->show();
     }
 }

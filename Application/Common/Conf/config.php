@@ -1,5 +1,4 @@
 <?php
-$env = \Common\Common\Util::detectEnv();
-$conf = [
+return [
     'DEFAULT_FILTER' => 'htmlspecialchars,trim'
 ];
