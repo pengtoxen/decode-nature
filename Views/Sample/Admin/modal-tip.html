@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>群组管理--发图文弹框</title>
+
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/modal-box.css">
+
+</head>
+
+<body>
+
+<div class="modal-filter"></div>
+
+<!--发图文弹框-->
+
+<div class="default-skin modal-wrap modal-tip">
+    <div class="modal-top">
+        <h5 class="keep-all">提示:</h5>
+    </div>
+    <div class="modal-body">
+        <p>请输入活动标题</p>
+        <p>请输入活动标题</p>
+    </div>
+    <div class="modal-btn-tip">
+        <a href="javascript:;" id="btn-cancle" class="btn-tip no-border">确定</a>
+    </div>
+</div>
+
+</body>
+
+<!--[if IE 8]>
+<style type="text/css">
+    .modal-filter {
+        background: #000;
+        opacity: .5;
+        filter: alpha(opacity=50);
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    }
+</style>
+<![endif]-->
+<script src="common/js/jquery-3.2.1.min.js"></script>
+<!--[if IE 8]>
+<script src="common/js/jquery-1.11.0.min.js"></script>
+<script>
+    $(function () {
+        var $obj = $('.modal-wrap');
+        for(var i = 0; i <　$obj.length; i++){
+            if(!$obj.eq(i).hasClass('hide')){
+                var modalHeight = $obj.eq(i).height() / 2;
+                var modalWidth = $obj.eq(i).width() / 2;
+                $obj.eq(i).css({
+                    'top': '50%',
+                    'left': '50%',
+                    'margin-top': -modalHeight,
+                    'margin-left': -modalWidth
+                });
+            }
+        }
+    })
+</script>
+<![endif]-->
+</html>

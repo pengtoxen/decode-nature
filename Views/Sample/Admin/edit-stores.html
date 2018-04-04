@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>添加门店</title>
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="content-add-header">
+        <h5 class="fleft">添加图文</h5>
+    </div>
+    <div class="content-add-body">
+        <form class="form-horizontal" style="">
+            <div class="form-cont clear" style="">
+                <ul class="form-ul add-coupons-box">
+                    <li>
+                        <label>门店名称 ：</label>
+                        <div class="input-group">
+                            <input type="text" name="title" placeholder="门店名称">
+                            <div class="tips">*门店名不得含有区域地址信息（如，北京市XXX公司）</div>
+                        </div>
+                    </li><li>
+                    <label>分店名称 ：</label>
+                    <div class="input-group">
+                        <input type="text" name="title" placeholder="分店名称">
+                        <div class="tips">*分店名不得含有区域地址信息（如，“北京国贸店”中的“北京”）</div>
+                    </div>
+                </li><li>
+                    <label>店铺经纬度：</label>
+                    <div class="input-group">
+                        <input type="text" name="title" placeholder="经度">
+                        <input type="text" name="title" placeholder="纬度">
+                        <a href="javascript:void(0);" onclick="get_coordinate()">获取经纬度</a>
+                        <div class="map" id="map">
+                            <div class="map-title clear">
+                                <div class="fleft mr-small">
+                                    <input type="text" id="suggestId">
+                                    <div id="searchResultPanel"></div>
+                                </div>
+                                <a href="javascript:void(0);" onclick="close_map();" class="fleft">关闭</a>
+                            </div>
+                            <div id="map-body"></div>
+                        </div>
+                    </div>
+                </li>
+                    <li>
+                        <label>地址：</label>
+                        <div class="input-group">
+                            <select class="sel-normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                            <select class="sel-normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>类目：</label>
+                        <div class="input-group">
+                            <select class="sel-normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                            <select class="sel-normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>营业时间：</label>
+                        <div class="input-group">
+                            <input type="text" name="start_end_time" id="time_range" placeholder="营业时间范围" readonly="readonly" lay-key="1">
+                        </div>
+                    </li>
+                    <li>
+                        <label>所属公司：</label>
+                        <div class="input-group">
+                            <select class="sel-normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>编辑活动：</label>
+                        <div class="input-group">
+                            <script id="editor_wrap" name="content" type="text/plain">这里写你的初始化内容</script>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-box line">
+                <a href="javascript:void(0);" class="btn btn-success save">保存</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

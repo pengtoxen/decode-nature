@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>自定义菜单</title>
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+    <link rel="stylesheet" href="/ug/b/css/custom.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="custom-menu-box">
+        <div class="wechat-box fleft">
+            <div class="wechat-foot">
+                <div class="wechat-menu">
+                    <div class="top-menu active" data-name="会员管理" data-index="0"><p class="name">会员管理</p>
+                        <div class="sub-menu" style="display: block;">
+                            <ul>
+                                <li class="active" data-index="0" data-type="view" data-url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a4bbe78c7cc23ab&amp;redirect_uri=http://dev.unionglasses.com/hgwechat/orderlist?hq_code=057188930000&amp;action=viewtest&amp;response_type=code&amp;scope=snsapi_base&amp;state=1#wechat_redirect" data-mediaid="">我的订单</li><li data-index="1" data-type="view" data-url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a4bbe78c7cc23ab&amp;redirect_uri=http://dev.unionglasses.com/hgwechat/optometrylist?hq_code=057188930000&amp;action=viewtest&amp;response_type=code&amp;scope=snsapi_base&amp;state=1#wechat_redirect" data-mediaid="">验光资料查询</li>
+                                <li class="add" data-index="0">+</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top-menu" data-name="活动" data-index="1"><p class="name">活动</p>
+                        <div class="sub-menu">
+                            <ul>
+                                <li data-index="0" data-type="view"
+                                    data-url="http://dev.unionglasses.com/uploads/activity/057188930000/2017/09/20170918111605.html"
+                                    data-mediaid="">国庆优惠活动
+                                </li>
+                                <li class="add" data-index="1">+</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top-menu" data-name="关于我们" data-index="2">
+                        <p class="name">关于我们</p>
+                        <div class="sub-menu" style="display: none;">
+                            <ul>
+                                <li data-index="0" data-type="view" data-url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a4bbe78c7cc23ab&amp;redirect_uri=http://dev.unionglasses.com/hgwechat/memberCenter?hq_code=057188930000&amp;action=viewtest&amp;response_type=code&amp;scope=snsapi_base&amp;state=1&amp;coupon_id=1&amp;connect_redirect=1" data-mediaid="">会员中心</li>
+                                <li class="add" data-index="2">+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wechat-r">
+            <form class="form-horizontal">
+                <div class="alert alert-error" style="display: none;">
+                    <span></span>
+                </div>
+                <div class="form-head">
+                    <h5 class="fleft">关于我们</h5>
+                    <a class="fright" href="javascript:void(0);" onclick="del_top_menu(this)"
+                       data-topindex="2">删除菜单</a>
+                </div>
+                <div class="form-cont clear">
+                    <ul class="form-ul">
+                        <li>
+                            <label>子菜单名称：</label>
+                            <div class="input-group">
+                                <input type="text" name="name" placeholder="子菜单名称" value="优惠券"
+                                       data-topindex="0"
+                                       data-subindex="2">
+                            </div>
+                        </li>
+                        <li>
+                            <label class="radio-label">
+                                <input class="radio-input" type="radio" name="radio-input" checked="checked">
+                                <span class="radioInput"></span>链接：
+                            </label>
+                            <div class="input-group">
+                                <input type="text" name="url" placeholder="链接" data-topindex="0"
+                                       data-subindex="2"
+                                       value="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a4bbe78c7cc23ab&amp;redirect_uri=http://dev.unionglasses.com/hgwechat/couponlist?hq_code=057188930000&amp;action=viewtest&amp;response_type=code&amp;scope=snsapi_base&amp;state=1#wechat_redirect"
+                                >
+                            </div>
+                        </li>
+                        <li>
+                            <label class="radio-label">
+                                <input class="radio-input" type="radio" name="radio-input" checked="checked">
+                                <span class="radioInput"></span>图文：
+                            </label>
+                            <div class="input-group">
+                                <div class="news-selected">
+                                    <a href="#sel_news" data-toggle="modal" class="sel-news">从素材库选择</a>
+                                    <br>
+                                    <table class="table selected-news"></table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            <!--<form class="form-horizontal">
+                <div class="alert alert-error" style="display: none;">
+                    <span></span>
+                </div>
+                <div class="form-head">
+                    <h5 class="fleft">关于我们</h5>
+                    <a class="fright" href="javascript:void(0);" onclick="del_top_menu(this)" data-topindex="2">删除菜单</a>
+                </div>
+                <ul class="form-cont clear">
+                    <li>
+                        <label>菜单名称：</label>
+                        <div class="input-group">
+                            <input type="text" name="name" placeholder="菜单名称" value="关于我们" data-topindex="2">
+                        </div>
+                    </li>
+                </ul>
+            </form>&lt;!&ndash; 关于我们 end &ndash;&gt;-->
+        </div><!-- 右侧表单 end -->
+    </div>
+    <div class="btn-box line">
+        <a href="javascript:void(0);" class="btn btn-success save-menu">保存并发布</a>
+    </div>
+</div>
+</body>
+</html>

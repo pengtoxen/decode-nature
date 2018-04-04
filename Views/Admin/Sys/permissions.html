@@ -1,0 +1,59 @@
+<extend name="Base@Admin/datatable" />
+<block name="title">
+<title>菜单列表</title>
+</block>
+<block name="js"> <script type="text/javascript">
+	var sysCate={$cate};
+	inf_dtbl.sort=true;
+	inf_dtbl.cols = [ {
+		col : 'c0',
+		tit : '权限名',
+	}, {
+		col : 'c1',
+		tit : '权限说明',
+	}, {
+		col : 'c2',
+		tit : '权限类型',
+		rep : function(d){
+			var html = '',i=0;
+			for(i=0;i<sysCate.length;i++){
+				if(sysCate[i].val==d.c2){
+					html += sysCate[i].title;
+					break;
+				}
+			}
+			return html;
+		}
+	}, {
+		col : 'c3',
+		tit : '创建时间',
+		rep : function(d) {
+			if(d.c3!='0')
+				return d.c3.date('yyyy-MM-dd hh:mm:ss');
+		}
+	}, ]; 
+
+	inf_dtbl.menus.rows.push({
+		tag : 'toRelation',
+		title : '配置操作对象 ',
+		icon : 'fa fa-link'
+	});
+	inf_ext.menus.callback = function(tag, d){
+		switch(tag){
+		case 'toRelation':
+			$.openTab('{:U('permoper')}?id='+d.id,'配置操作对象 '+d.c0);
+			break;
+		}	
+	};
+	
+	inf_dtbl.query={btn:'.d-query-btn'}; 
+	inf_dtbl.query.filter=function(){
+		return {q0:$('#d-query-text').val()};
+	};
+</script> </block>
+<block name="query_ui">
+<div class="form-row">
+	<label class="form-label"><span>菜单名或url</span></label> <input id="d-query-text" type="text" class="form-text anchor_c{$k}" cid="c{$k++}" placeholder="搜索菜单名或url" />
+<button class="btn btn-primary btn-sm d-query-btn"><i class="fa fa-search"> 查询</i></button>
+</div>
+</block>

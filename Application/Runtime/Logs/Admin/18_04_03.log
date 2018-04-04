@@ -1,0 +1,517 @@
+[ 2018-04-03T16:29:07+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 43 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0370s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T16:34:10+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T16:35:59+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-03T16:38:25+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+ERR: 模板不存在:\Admin/Fossil/lists.html
+
+[ 2018-04-03T16:38:56+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-03T16:41:05+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T16:41:07+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T16:41:40+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::display($templateFile = '', $charset = '', $contentType = '') should be compatible with Think\Controller::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $code = 0) should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($message = '', $code = 1) should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 121 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 6 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T16:50:42+08:00 ] 127.0.0.1 /admin/fossil/lists
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-03T17:00:50+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:00:50+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-03T17:02:16+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:02:17+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T17:02:26+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:02:26+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T17:02:55+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:02:55+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-03T17:03:47+08:00 ] 127.0.0.1 /admin/fossil/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:03:47+08:00 ] 127.0.0.1 /admin/fossil/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `dn_fossil` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+NOTIC: [8] Undefined index: is_comment F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 138 行.
+NOTIC: [8] Undefined index: photoInfo F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 162 行.
+
+[ 2018-04-03T17:04:42+08:00 ] 127.0.0.1 /admin/fossil/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:04:42+08:00 ] 127.0.0.1 /admin/fossil/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dn_fossil` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+NOTIC: [8] Undefined index: is_comment F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 138 行.
+NOTIC: [8] Undefined index: photoInfo F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 162 行.
+
+[ 2018-04-03T17:04:53+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:04:53+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T17:04:56+08:00 ] 127.0.0.1 /admin/fossil/detail?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:04:56+08:00 ] 127.0.0.1 /admin/fossil/detail?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `dn_fossil` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+NOTIC: [8] Undefined index: is_comment F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 138 行.
+NOTIC: [8] Undefined index: photoInfo F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 162 行.
+
+[ 2018-04-03T17:04:58+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:04:58+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2018-04-03T17:04:59+08:00 ] 127.0.0.1 /admin/fossil/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:04:59+08:00 ] 127.0.0.1 /admin/fossil/detail?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dn_fossil` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+NOTIC: [8] Undefined index: is_comment F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 138 行.
+NOTIC: [8] Undefined index: photoInfo F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 162 行.
+
+[ 2018-04-03T17:05:02+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+
+[ 2018-04-03T17:05:02+08:00 ] 127.0.0.1 /admin/fossil/lists?page=1&limit=20&name_zh=&classification=&geo_age=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::show($content = '', $msg = '') should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] Declaration of Org\Eco\ControllerEx::error($content = '', $msg = '') should be compatible with Think\Controller::error($message = '', $jumpUrl = '', $ajax = false) F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 78 行.
+NOTIC: [2] include_once(F:\php\decode-nature\Application/Common/DefineVar/template.php): failed to open stream: No such file or directory F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [2] include_once(): Failed opening 'F:\php\decode-nature\Application/Common/DefineVar/template.php' for inclusion (include_path='.;C:\php\pear') F:\php\decode-nature\ThinkPHP\Library\Org\Eco\ControllerEx.class.php 第 7 行.
+NOTIC: [8] Undefined variable: w F:\php\decode-nature\Application\Admin\Controller\FossilController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dn_fossil` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant DEMO_MOLD - assumed 'DEMO_MOLD' F:\php\decode-nature\ThinkPHP\Library\Org\Eco\DbModel.class.php 第 81 行.
+NOTIC: [8] Undefined index: default F:\php\decode-nature\ThinkPHP\Library\Think\Model.class.php 第 142 行.
+SQL: SHOW COLUMNS FROM `dn_fossil` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dn_fossil` LIMIT 1   [ RunTime:0.0000s ]
+

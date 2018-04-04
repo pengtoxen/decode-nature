@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>素材管理--添加图文</title>
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+    <link rel="stylesheet" href="/ug/b/css/add-material.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="content-add-header">
+        <h5 class="fleft">添加图文</h5>
+    </div>
+    <div class="page-add-box">
+        <div class="item-l fleft">
+            <div class="item new-first-item">
+                <div class="thumb-item thumb">
+                    <h4 class="title"><a class="keep-all" href="javascript:void(0);" onclick="return false;">标题</a></h4>
+                    <i class="default-thumb"></i>
+                </div>
+            </div>
+            <div class="item new-item active"><div class="thumb-item"><h4 class="title"><a class="keep-all" href="javascript:void(0);" onclick="return false;">标题</a></h4><div class="thumb"><i class="default-thumb"></i></div></div><div class="foo" style="display: block; overflow: hidden; height: 0.00109661px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;"><a href="javascript:void(0);" onclick="del_item(this)">删除</a></div></div>
+            <div class="add-new-item">
+                <i class="add-new-btn"></i>
+            </div>
+        </div>
+        <div class="item-r">
+            <form class="form-horizontal">
+                <div class="form-cont clear">
+                    <ul class="form-ul">
+                        <li>
+                            <label>封面：</label>
+                            <div class="input-group">
+                                <a class="button button-default" data-toggle="modal" data-target="#sel_img" data-index="0">从图片库选择</a>
+                            </div>
+                        </li>
+                        <li>
+                            <label>标题：</label>
+                            <div class="input-group">
+                                <input type="text" name="title" placeholder="标题">
+                            </div>
+                        </li>
+                        <li>
+                            <label>作者：</label>
+                            <div class="input-group">
+                                <input type="text" name="author" placeholder="作者">
+                            </div>
+                        </li>
+                        <li>
+                            <label>摘要：</label>
+                            <div class="input-group">
+                                <textarea class="w96" rows="10" cols="4" name="digest" placeholder="摘要"></textarea>
+                            </div>
+                        </li>
+                        <li>
+                            <label>原文链接：</label>
+                            <div class="input-group">
+                                <div class="w96 mix-box">
+                                    <input type="text" name="content_source_url" placeholder="原文链接">
+                                    <a id="article-img" class="button button-default fright">文章图片</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>内容：</label>
+                            <div class="input-group">
+                                <script id="material_content" name="content" type="text/plain">这里填写内容</script>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

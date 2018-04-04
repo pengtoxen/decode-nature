@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>汉高微信后台管理</title>
+<link rel="stylesheet" href="/ug/b/css/common.css">
+<link rel="stylesheet" href="/ug/b/css/default-skin.css">
+<link rel="stylesheet" href="/ug/b/css/modal-box.css">
+<link rel="stylesheet" href="/ug/b/css/table.css">
+</head>
+<body class="tab-page">
+	<div class="default-skin">	
+		<div id="query_ui">
+			<php>$k=0;</php>
+			<block name="query_ui"></block>
+		</div>
+		<div id="tblcont"></div>
+	</div>
+	<script type="text/javascript" src="/ug/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/ug/js/plugincore.js"></script>
+	<script type="text/javascript" src="/ug/b/js/dialog.js"></script>
+	<script type="text/javascript" src="/ug/b/js/datatable.js"></script>
+	<script type="text/javascript">
+		var tpl_obj={};
+		var itemEditSave=function(){};
+		var itemDelSave=function(){};
+		var inf_dtbl={$data};
+		var inf_ext={menus:{}};
+		inf_dtbl.thumbnail=0;
+		inf_dtbl.menus = {
+			callback : function(tag, d) {
+				switch(tag){
+				case 'edit':
+					itemEditSave(d, $(this));
+					break;
+				case 'del':
+					itemDelSave(d, $(this));
+					break;
+				default :
+					inf_ext.menus.callback.call($(this), tag, d);
+					break;
+				}
+			},
+			rows : [],
+		};
+		<notempty name="btn_edit">
+		inf_dtbl.menus.rows.push({
+			tag : 'edit',
+			title : '编辑',
+			icon : 'btn-edit'
+		});
+		itemEditSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			$.openTab('{$url.itemedit}?id='+d.id,'编辑 '+d.c0);
+		};
+		</notempty>
+		<notempty name="btn_del">
+		inf_dtbl.menus.rows.push({
+			tag : 'del',
+			title : '删除',
+			icon : 'btn-red btn-del'
+		});
+		itemDelSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			tpl_obj.evtjq=jq;
+			tpl_obj.evttr=jq.parents('*[_no]:first');
+			var pdata = {id: d.id};
+			$.confirm('您确定要删除此行信息？',function(){
+				var turl='{$url.itemdel}';
+				$.ajaxExt(turl,pdata,function(jo){
+					if(jo.isOk()){
+						tpl_obj.evttr.remove();
+					}else{
+						$.alert(jo.getMessage());
+					}
+				});
+			});
+		};
+		</notempty>
+	</script>
+	<block name="js"></block>
+	<script type="text/javascript">
+	$(function() {
+		tpl_obj.tblctl=$('#tblcont').datatable(inf_dtbl);
+		$('#btnadd').on('click',function(){
+			$.openTab('{$url.itemadd}','新增');
+		});
+	});
+	</script>
+</body>
+</html>

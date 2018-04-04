@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>登录</title>
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/login.css">
+</head>
+<body>
+<div class="default-skin">
+    <div class="login-header">
+        <div class="login-header-nav">
+            <div class="nav-left">
+                <a class="logo-big fleft">
+                    <i class="fleft"></i>
+                    <span>欢迎登录汉高微信管理系统</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="login-body">
+        <div class="login-cont">
+            <div class="login-inner">
+                <div class="login-box-l">
+                    <!--<img src="/ug/b/img/bg-login.jpg" />-->
+                </div>
+                <div class="login-box-r">
+                    <div class="login-title">
+                        <h3>用户登录</h3>
+                    </div>
+                    <div class="ul-wrap">
+                        <ul class="login-ul">
+                            <li>
+                                <div class="field-input-wrap">
+                                    <input type="text" name="username" class="field-input" autocomplete="off" placeholder="账号">
+                                    <div class="field-icon icon-user"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="field-input-wrap">
+                                    <input type="password" name="password" class="field-input password" id="password" autocomplete="off" placeholder="账号">
+                                    <div class="field-icon icon-pass"></div>
+                                </div>
+                                <div class="forget-box"><span class="forget-tip">忘记密码了？</span></div>
+                            </li>
+                            <li>
+                                <div class="field-group">
+                                    <div class="field-input-wrap w50">
+                                        <input type="text" name="code" class="set-code-input" id="setImgCode" autocomplete="off" placeholder="验证码">
+                                    </div>
+                                    <div class="field-code-wrap">
+                                        <div class="set-img-code fleft"><img src="/ug/b/img/iocn-code-img.png" /></div>
+                                        <i class="icon btn-refresh fright"></i>
+                                    </div>
+                                </div>
+                                <div class="tips">验证码错误</div>
+                            </li>
+                        </ul>
+                        <div class="button-box">
+                            <a class="button-big button-big-bg">登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="footer_menu">
+            <li>杭州汉高信息科技有限公司</li>
+            <li>Copyright© 2003 - 2017　<a class="underline" href="http://www.hencego.com/" target="_blank">hencego.com</a></li>
+            <li><a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备05073380号</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<!--[if IE 8]>
+<script src="/ug/js/jquery-1.11.0.min.js"></script>
+<script>
+    $(function () {
+        var $obj = $('.login-box');
+        var objHeight = $obj.height() / 2;
+        $obj.css({
+            'top': '50%',
+            'margin-top': -objHeight
+        });
+    })
+</script>
+<![endif]-->
+<script src="/ug/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('.field-input-wrap > input').on('focus',setFocus);
+        $('.field-input-wrap > input').on('blur',cancleFocus);
+    });
+    function setFocus() {
+        $(this).css('border',0);
+        $(this).closest('.field-input-wrap').addClass('focus');
+    }
+    function cancleFocus() {
+        $(this).css('border',0);
+        $(this).closest('.field-input-wrap').removeClass('focus');
+    }
+</script>
+</html>

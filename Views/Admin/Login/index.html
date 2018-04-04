@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>登录汉高微信后台管理</title>
+<link rel="stylesheet" href="/ug/b/css/common.css">
+<link rel="stylesheet" href="/ug/b/css/default-skin.css">
+<link rel="stylesheet" href="/ug/b/css/modal-box.css">
+<link rel="stylesheet" href="/ug/b/css/login.css">
+<script type="text/javascript">
+if (self !== top) {
+	top.window.location.reload();
+}
+</script>
+</head>
+<body>
+	<div class="default-skin">
+		<div class="login-header">
+			<div class="login-header-nav">
+				<div class="nav-left">
+					<a class="logo-big fleft"> <i class="fleft"></i> <span>欢迎登录汉高微信管理系统</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-body">
+			<div class="login-cont">
+				<div class="login-inner">
+					<div class="login-box-l"></div>
+					<div class="login-box-r">
+						<div class="login-title">
+							<h3>用户登录</h3>
+						</div>
+						<div class="ul-wrap">
+							<ul class="login-ul">
+								<li>
+									<div class="field-input-wrap">
+										<input id="username" type="text" class="field-input" autocomplete="off" placeholder="请输入帐号">
+										<div class="field-icon icon-user"></div>
+									</div>
+								</li>
+								<li>
+									<div class="field-input-wrap">
+										<input id="password" type="password" class="field-input password" id="password" autocomplete="off" placeholder="请输入密码">
+										<div class="field-icon icon-pass"></div>
+									</div>
+									<div class="forget-box">
+										<span class="forget-tip">忘记密码了？</span>
+									</div>
+								</li>
+								<li>
+									<div class="field-group">
+										<div class="field-input-wrap w50">
+											<input id="vcode" type="text" maxlength="4" class="set-code-input" autocomplete="off" placeholder="请输入验证码">
+										</div>
+										<div class="field-code-wrap">
+											<div class="set-img-code fleft">
+												<img id="vcimg" />
+											</div>
+											<i class="icon btn-refresh fright"></i>
+										</div>
+									</div>
+									<div class="tips">&nbsp;</div>
+								</li>
+							</ul>
+							<div class="button-box">
+								<a id="login" class="button-big button-big-bg">登录</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<ul class="footer_menu">
+				<li>杭州汉高科技有限公司</li>
+				<li>Copyright© 2003 - 2017 hencego.com</li>
+				<li><a href="http://www.miibeian.gov.cn/">浙ICP备05073380号</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/ug/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ug/js/plugincore.js"></script>
+<script type="text/javascript" src="/ug/b/js/dialog.js"></script>
+<script type="text/javascript" src="/ug/b/js/datatable.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('.field-input-wrap > input').on('focus', setFocus);
+		$('.field-input-wrap > input').on('blur', cancleFocus);
+		$('#login').on('click', function() {
+			submitForm();
+		});
+		$('#vcimg,.btn-refresh').on('click', function() {
+			$('#vcimg').attr('src', '/Tp/Verify/' + '?r=' + Math.random());
+		});
+		document.onkeydown = function(e) {
+			var ev = document.all ? window.event : e;
+			if (ev.keyCode == 13) {
+				submitForm();
+			}
+		};
+		$('.btn-refresh').trigger('click');
+		$('#username').focus();
+	});
+
+	function setFocus() {
+		$(this).css('border', 0);
+		$(this).closest('.field-input-wrap').addClass('focus');
+	}
+	function cancleFocus() {
+		$(this).css('border', 0);
+		$(this).closest('.field-input-wrap').removeClass('focus');
+	}
+
+	function checkInfo() {
+		var pdata = {};
+		pdata.username = $('#username').val();
+		if (pdata.username == '') {
+			$('#username').focus();
+			return '请输入帐号';
+		}
+		pdata.password = $('#password').val();
+		if (pdata.password == '') {
+			$('#password').focus();
+			return '请输入密码';
+		}
+		pdata.vcode = $('#vcode').val();
+		if (pdata.vcode == '') {
+			$('#vcode').focus();
+			return '请输入验证码';
+		}
+		return pdata;
+	}
+
+	function submitForm() {
+		var pdata = checkInfo();
+		if (typeof pdata == 'string') {
+			$('.tips').html(pdata);
+			return;
+		}
+		$('.tips').html('&nbsp;');
+		$.ajax({
+			url : '{$pwdurl}',
+			type : 'POST',
+			data : pdata,
+			success : function(jo) {
+				if (jo._c == 0) {
+					if (window.location.href.toLowerCase().indexOf('/admin/login') == -1) {
+						window.location.reload();
+					} else {
+						window.location.replace('/admin/');
+					}
+				} else {
+					$('.tips').html(jo._m);
+					$('#vcode').val('');
+					$('.btn-refresh').trigger('click');
+					if (jo._c == 5) {
+						$('#vcode').focus();
+					}
+				}
+			}
+		});
+	}
+</script>
+</html>

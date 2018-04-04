@@ -1,0 +1,31 @@
+<extend name="Base@Admin/datatable" />
+<block name="title">
+<title>菜单列表</title>
+</block>
+<block name="js"> <script type="text/javascript">
+	inf_dtbl.sort=true;
+	inf_dtbl.cols = [ {
+		col : 'c0',
+		tit : '角色名',
+	}, {
+		col : 'c1',
+		tit : '角色状态',
+	}, {
+		col : 'c2',
+		tit : '角色说明',
+	}, {
+		col : 'c3',
+		tit : '创建时间',
+	}, ]; 
+
+	inf_dtbl.query={btn:'.d-query-btn'}; 
+	inf_dtbl.query.filter=function(){
+		return {q0:$('#d-query-text').val()};
+	};
+</script> </block>
+<block name="query_ui">
+<div class="form-row">
+	<label class="form-label"><span>菜单名或url</span></label> <input id="d-query-text" type="text" class="form-text anchor_c{$k}" cid="c{$k++}" placeholder="搜索菜单名或url" />
+<button class="btn btn-primary btn-sm d-query-btn"><i class="fa fa-search"> 查询</i></button>
+</div>
+</block>

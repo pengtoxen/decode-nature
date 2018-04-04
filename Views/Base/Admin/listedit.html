@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<block name="title">
+<title>汉高微信后台管理</title>
+</block>
+<link href="/res/css/bootstrap.min.css" rel="stylesheet">
+<link href="/res/css/font-awesome.css" rel="stylesheet">
+<link href="/res/css/mydialog.css" rel="stylesheet">
+<link href="/res/css/datatable.css" rel="stylesheet">
+<link href="/res/css/pagination.css" rel="stylesheet">
+<style type="text/css">
+body {
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+	<div id="query_ui">
+		<php>$k=0;</php>
+		<block name="query_ui"></block>
+	</div>
+	<div id="tblcont"></div>
+	<script type="text/javascript" src="/res/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/res/js/mycore.js"></script>
+	<script type="text/javascript" src="/res/js/mydialog.js"></script>
+	<script type="text/javascript" src="/res/js/datatable.js"></script>
+	<script type="text/javascript" src="/res/js/formvals.js"></script>
+	<script type="text/javascript">
+		var tpl_obj={};
+		var itemEditSave=function(){};
+		var itemDelSave=function(){};
+		var inf_dtbl={$data};
+		inf_dtbl.thumbnail=0;
+		inf_dtbl.menus = {
+			callback : function(tag, d) {
+				switch(tag){
+				case 'save':
+					itemEditSave(d, $(this));
+					break;
+				case 'del':
+					itemDelSave(d, $(this));
+					break;
+				default :
+					inf_btns.callback.call($(this), tag, d);
+					break;
+				}
+			},
+			rows : [],
+		};
+		<notempty name="btn_edit">
+		inf_dtbl.menus.rows.push({
+			tag : 'save',
+			title : '保存',
+			icon : 'fa fa-save'
+		});
+		itemEditSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			tpl_obj.evtjq=jq;
+			tpl_obj.evttr=jq.parents('*[_no]:first');
+			var pdata = {id: d.id};
+			$.formvals(tpl_obj.evttr,'cid',pdata);
+			var ignore = function(){};
+			if(typeof ignoreForm == 'function'){
+				ignore=ignoreForm;
+			}
+			for(var k in pdata){
+				if(pdata[k] === '' || pdata[k] === '0'){
+					if(ignore(k,pdata) === true){
+						continue;
+					}
+					var anchor=tpl_obj.evttr.find('.anchor_'+k);
+					anchor.poptip('请输入或选择信息');
+					anchor.trigger('focus');
+					return false;
+				}
+			}
+			var turl='{$url.save}';
+			$.ajaxExt(turl,pdata,function(jo){
+				if(jo.isOk()){
+					tpl_obj.evtjq.poptip('保存成功',false);
+				}else{
+					$.alert(jo.getMessage());
+				}
+			});
+		};
+		</notempty>
+		<notempty name="btn_del">
+		inf_dtbl.menus.rows.push({
+			tag : 'del',
+			title : '删除',
+			icon : 'fa fa-trash-o'
+		});
+		itemDelSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			tpl_obj.evtjq=jq;
+			tpl_obj.evttr=jq.parents('*[_no]:first');
+			var pdata = {id: d.id};
+			$.confirm('您确定要删除此行信息？',function(){
+				var turl='{$url.del}';
+				$.ajaxExt(turl,pdata,function(jo){
+					if(jo.isOk()){
+						tpl_obj.evttr.remove();
+					}else{
+						$.alert(jo.getMessage());
+					}
+				});
+			});
+		};
+		</notempty>
+	</script>
+	<block name="js"></block>
+	<script type="text/javascript">
+	$(function() {
+		tpl_obj.tblctl=$('#tblcont').datatable(inf_dtbl);
+		$('#btnadd').on('click',function(){
+			$.openTab('{$url.itemadd}','新增');
+		});
+	});
+	</script>
+</body>
+</html>

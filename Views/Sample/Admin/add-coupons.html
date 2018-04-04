@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>添加优惠券</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+    <link rel="stylesheet" href="/ug/b/css/add-list.css">
+    <link rel="stylesheet" href="/ug/b/css/add-coupons.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="content-add-header">
+        <h5 class="fleft">添加图文</h5>
+    </div>
+    <div class="content-add-body">
+        <form class="form-horizontal" style="">
+            <div class="form-cont clear" style="">
+                <ul class="form-ul add-coupons-box" style="">
+                    <li>
+                        <label>券样：</label>
+                        <div class="input-group">
+                            <input type="hidden" name="cardcoupon_image_id" value="">
+                            <div class="img" id="up_img"></div>
+                            <div class="tips">建议您上传145*70的图稿大小，格式为png jpeg</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>券标题：</label>
+                        <div class="input-group">
+                            <input type="text" name="title" placeholder="0 - 9个字">
+                        </div>
+                    </li>
+                    <li>
+                        <label>券类型：</label>
+                        <div class="input-group">
+                            <select class="w-small" name="coupon-type">
+                                <option value="1">电子消费券</option>
+                                <option value="2">折扣券</option>
+                                <option value="3">积分券</option>
+                            </select>
+                            <input class="w20" type="text" name="title" placeholder="0 - 9个字">
+                            <div class="tips clear">请填写1 - 9.9之间，精确到小数点后一位</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>所属品牌品种：</label>
+                        <select class="sel-normal" name="brand_id">
+                            <option>镜片</option>
+                            <option>镜架</option>
+                            <option>太阳镜</option>
+                            <option>隐型眼镜</option>
+                            <option>代价券</option>
+                            <option>老花镜</option>
+                            <option>其他商品</option>
+                            <option>黄金</option>
+                            <option>低值易耗品</option>
+                            <option>隐型眼镜辅助产品</option>
+                            <option>眼镜辅助产品</option>
+                            <option>隐形眼镜药水、药片、</option>
+                            <option>折扣券</option>
+                            <option>模块</option>
+                            <option>数码产品</option>
+                            <option>广医</option>
+                            <option>硬性隐形眼镜</option>
+                        </select>
+                        <select class="sel-normal" name="product_id">
+                            <option>镜片</option>
+                            <option>镜架</option>
+                            <option>太阳镜</option>
+                            <option>隐型眼镜</option>
+                            <option>代价券</option>
+                            <option>老花镜</option>
+                            <option>其他商品</option>
+                            <option>黄金</option>
+                            <option>隐形眼镜药水、药片、</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label>库存：</label>
+                        <div class="input-group">
+                            <input type="text" name="title" placeholder="库存">
+                        </div>
+                    </li>
+                    <li>
+                        <label>领券限制：</label>
+                        <div class="input-group">
+                            <input type="text" name="title" placeholder="数量">
+                            <em>张</em>
+                        </div>
+                    </li>
+                    <li>
+                        <label>有效期：</label>
+                        <div class="input-group date-group">
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-input" checked="checked">
+                                    <span class="radioInput"></span>固定日期
+                                </label>
+                                <div class="input-group">
+                                    <input type="text" class="w20" id="deadline-date" name="start_end_date">
+                                </div>
+                            </div>
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-input">
+                                    <span class="radioInput"></span>领券后
+                                </label>
+                                <div class="input-group fleft">
+                                    <div class="div-box clear">
+                                        <input type="text" class="w20" name="day_valid"><em class="form-txt">天后生效</em>
+                                    </div>
+                                    <div class="div-box clear">
+                                        <input type="text" class="w20" name="day_invalid"><em class="form-txt">天后失效</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>时间段：</label>
+                        <div class="input-group">
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-date">
+                                    <span class="radioInput"></span>全部时段
+                                </label>
+                            </div>
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-date" checked="checked">
+                                    <span class="radioInput"></span>部分时段
+                                </label>
+                                <div class="times-tr" style="display: block;">
+                                    <div class="date-box">
+                                        <label>日期：</label>
+                                        <div class="fleft checkbox-group">
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周一
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周二
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周三
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周四
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周五
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周六
+                                            </label>
+                                            <label class="radio-label checkbox-label">
+                                                <input class="radio-input" type="checkbox" name="weekdays[]">
+                                                <span class="radio-checkbox radioInput"></span>周日
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="date-box">
+                                        <label class="fleft">时间：</label>
+                                        <div class="fleft">
+                                            <input type="text" name="period_times_start[]">
+                                            <span class="space-txt fleft">至</span>
+                                            <input type="text" name="period_times_end[]">
+                                            <a href="javascript:void(0);" onclick="add_times(this)">添加时间段</a>
+                                            <div class="tips">请使用24小时制输入时间，格式如 10:00 至 16:00 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>使用须知：</label>
+                        <div class="input-group">
+                            <textarea class="textarea-default" name="remark" placeholder="使用须知"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-box line">
+                <a href="javascript:void(0);" class="btn btn-success save">保存</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

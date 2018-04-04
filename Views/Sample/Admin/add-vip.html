@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>会员卡</title>
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+    <link rel="stylesheet" href="/ug/b/css/add-list.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="content-add-header">
+        <h5 class="fleft">添加图文</h5>
+    </div>
+    <div class="content-add-body">
+        <form class="form-horizontal" style="">
+            <div class="form-cont clear" style="">
+                <ul class="form-ul" style="">
+                    <li>
+                        <label>商户：</label>
+                        <div class="input-group">
+                            <div class="img-box">
+                                <img src="" id="company-logo" class="company-logo">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>卡券背景：</label>
+                        <div class="input-group">
+                            <input type="hidden" name="cardcoupon_image_id" value="">
+                            <div class="img" id="up_img"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>会员卡标题：</label>
+                        <div class="input-group">
+                            <input type="text" name="title" placeholder="0 - 9个字">
+                        </div>
+                    </li>
+                    <li>
+                        <label>有效期：</label>
+                        <div class="input-group">
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-input" checked="checked">
+                                    <span class="radioInput"></span>固定日期
+                                </label>
+                                <input type="text" id="deadline-date" name="start_end_date">
+                            </div>
+                            <div class="div-box">
+                                <label class="radio-label">
+                                    <input class="radio-input" type="radio" name="radio-input">
+                                    <span class="radioInput"></span>永久有效
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>时间段：</label>
+                        <div class="input-group">
+                                <label class="radio-label clear">
+                                    <input class="radio-input" type="radio" name="radio-date" checked="checked">
+                                    <span class="radioInput"></span>全部时段
+                                </label>
+                                <label class="radio-label clear">
+                                    <input class="radio-input" type="radio" name="radio-date">
+                                    <span class="radioInput"></span>部分时段
+                                </label>
+                            <div class="times-tr">
+                                <div class="div-box">
+                                    <label class="wauto">日期：</label>
+                                    <input type="checkbox" name="weekdays[]" value="1">周一
+                                    <input type="checkbox" name="weekdays[]" value="2">周二
+                                    <input type="checkbox" name="weekdays[]" value="3">周三
+                                    <input type="checkbox" name="weekdays[]" value="4">周四
+                                    <input type="checkbox" name="weekdays[]" value="5">周五
+                                    <input type="checkbox" name="weekdays[]" value="6">周六
+                                    <input type="checkbox" name="weekdays[]" value="7">周日
+                                </div>
+                                <div class="div-box">
+                                    <label class="fleft wauto">时间：</label>
+                                    <div class="div-box fleft">
+                                        <input type="text" name="period_times_start[]">
+                                        至
+                                        <input type="text" name="period_times_end[]">
+                                        <a href="javascript:void(0);" onclick="add_times(this)">添加时间段</a>
+                                        <div class="tips mt8">请使用24小时制输入时间，格式如 10:00 至 16:00 </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>会员卡优惠：</label>
+                        <div class="input-group">
+                            折扣优惠，用户享 &nbsp;<input type="text" name="discount"> &nbsp;折
+                        </div>
+                    </li>
+                    <li>
+                        <label>特权说明：</label>
+                        <div class="input-group">
+                            <textarea class="textarea-default" name="privileged_description" placeholder="会员卡详情"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <label>使用须知：</label>
+                        <div class="input-group">
+                            <textarea class="textarea-default" name="remark" placeholder="使用须知"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <label>操作提示：</label>
+                        <div class="input-group">
+                            <input type="text" name="instruction" placeholder="字数请限制在16字以内">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-box line">
+                <a href="javascript:void(0);" class="btn btn-success save">保存</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

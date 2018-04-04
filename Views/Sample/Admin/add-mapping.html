@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>添加映射</title>
+    <link rel="stylesheet" href="/ug/b/css/common.css">
+    <link rel="stylesheet" href="/ug/b/css/default-skin.css">
+    <link rel="stylesheet" href="/ug/b/css/index.css">
+    <link rel="stylesheet" href="/ug/b/css/add-mapping.css">
+</head>
+<body class="tab-page">
+<div class="default-skin">
+    <div class="content-add-header">
+        <h5 class="fleft">添加映射</h5>
+    </div>
+    <div class="content-add-body">
+        <form class="form-horizontal" style="">
+            <div class="form-cont clear" style="">
+                <ul class="form-ul add-coupons-box">
+                    <li>
+                        <label>公司名称：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="公司名称">
+                        </div>
+                    </li>
+                    <li>
+                        <label>公司编号：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="公司名称">
+                            <div class="tips">* ERP公司设置中的公司编码</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>所属公司：</label>
+                        <div class="input-group">
+                            <select name="parent_id" class="form-sel">
+                                <option value="0">请选择</option>
+                                <option value="1">汉高信息科技</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <label>微信ID：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="微信ID">
+                            <div class="tips">*该ID在客户的微信官方后台中【设置】>>【账号信息】>>【原始ID】</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>appID：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="appID">
+                        </div>
+                    </li>
+                    <li>
+                        <label>appsecret：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="appsecret">
+                        </div>
+                    </li>
+                    <li>
+                        <label>查询关键字：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="查询关键字">
+                        </div>
+                    </li>
+                    <li>
+                        <label>静态IP / 域名：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="静态IP / 域名">
+                        </div>
+                    </li><li>
+                    <label>端口（Port）：</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" name="title" placeholder="端口（Port）">
+                    </div>
+                </li>
+                    <li>
+                        <label>是否使用动态IP：</label>
+                        <div class="input-group">
+                            <label class="radio-label">
+                                <input class="radio-input" type="radio" name="radio-input" checked="checked">
+                                <span class="radioInput"></span>动态
+                            </label>
+                            <label class="radio-label last">
+                                <input class="radio-input" type="radio" name="radio-input">
+                                <span class="radioInput"></span>静态
+                            </label>
+                            <div class="tips clear">*使用静态，则必须填写静态IP/域名；使用动态时必须填写序列号，ip、port可不填写</div>
+                        </div>
+                    </li>
+                    <li>
+                        <label>序列号：</label>
+                        <div class="input-group">
+                            <input autocomplete="off" type="text" name="title" placeholder="序列号">
+                        </div>
+                    </li><li>
+                    <label>集团版用户名：</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" name="title" placeholder="集团版用户名">
+                    </div>
+                </li><li>
+                    <label>集团版密码：</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" name="title" placeholder="集团版密码">
+                    </div>
+                </li><li>
+                    <label>后台登录账号：</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" name="title" placeholder="后台登录账号">
+                    </div>
+                </li><li>
+                    <label>后台登录密码：</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" name="title" placeholder="后台登录密码">
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="btn-box line">
+                <a href="javascript:void(0);" class="btn btn-success save">保存</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

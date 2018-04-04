@@ -1,0 +1,23 @@
+<extend name="Base@Admin/itemedit" />
+<block name="title">
+<title>新增权限</title>
+</block>
+<block name="subject">
+<h3>新增权限</h3>
+</block>
+<block name="edit_ui">
+<div class="form-row">
+	<label class="form-label"><span>权限名</span></label> <input type="text" class="form-text anchor_c{$k}" cid="c{$k++}" placeholder="" />
+</div>
+<div class="form-row">
+	<label class="form-label"><span>权限说明</span></label> <input type="text" class="form-text anchor_c{$k}" cid="c{$k++}" placeholder="" />
+</div>
+<div class="form-row">
+	<label class="form-label"><span>菜单类型</span></label><br>
+	<select class=" anchor_c{$k}" cid="c{$k++}" >
+	<volist name="cate" id="vo">
+	<option value="{$vo.val}" >{$vo.title}</option>
+	</volist>
+	</select>
+</div>
+</block>

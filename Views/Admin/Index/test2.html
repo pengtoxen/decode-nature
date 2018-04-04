@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title>汉高微信后台管理</title>
+<link rel="stylesheet" href="/ug/b/css/common.css">
+<link rel="stylesheet" href="/ug/b/css/default-skin.css">
+<link rel="stylesheet" href="/ug/b/css/modal-box.css">
+<link rel="stylesheet" href="/ug/b/css/table.css">
+</head>
+<body class="tab-page">
+	<div class="default-skin">		
+		<div class="content-header">
+			<div class="search-box">
+				<input id="d-query-text" type="text" value="" placeholder="搜索菜单名或url" class="anchor_c{$k}" cid="c{$k++}" > <a class="button btn-search d-query-btn"></a>
+			</div>
+		</div>
+		<div id="tblcont"></div>
+	</div>
+	<script type="text/javascript" src="/ug/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/ug/js/plugincore.js"></script>
+	<script type="text/javascript" src="/ug/b/js/dialog.js"></script>
+	<script type="text/javascript" src="/ug/b/js/datatable.js"></script>
+	<script type="text/javascript">
+		var tpl_obj={};
+		var itemEditSave=function(){};
+		var itemDelSave=function(){};
+		var inf_dtbl={rows:[], pagi:{_pn:1, _tot:0, _lmt:10}};
+		inf_dtbl.thumbnail=0;
+		inf_dtbl.menus = {
+			callback : function(tag, d) {
+				switch(tag){
+				case 'edit':
+					itemEditSave(d, $(this));
+					break;
+				case 'del':
+					itemDelSave(d, $(this));
+					break;
+				default :
+					break;
+				}
+			},
+			rows : [],
+		};
+		inf_dtbl.menus.rows.push({
+			tag : 'edit',
+			title : '编辑',
+			icon : 'btn-edit'
+		});
+		itemEditSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			$.openTab('{$url.itemedit}?id='+d.id,'编辑 '+d.c0);
+		};
+		inf_dtbl.menus.rows.push({
+			tag : 'del',
+			title : '删除',
+			icon : 'btn-red btn-del'
+		});
+		itemDelSave=function(d, jq){
+			if(!d){
+				return;
+			}
+			tpl_obj.evtjq=jq;
+			tpl_obj.evttr=jq.parents('*[_no]:first');
+			var pdata = {id: d.id};
+			$.confirm('您确定要删除此行信息？',function(){
+				var turl='{$url.itemdel}';
+				$.ajaxExt(turl,pdata,function(jo){
+					if(jo.isOk()){
+						tpl_obj.evttr.remove();
+					}else{
+						$.alert(jo.getMessage());
+					}
+				});
+			});
+		};
+		inf_dtbl.url='{$ajaxUrl}';
+		inf_dtbl.cols = [ {
+			col : 'c0',
+			tit : '菜单名',
+		}, {
+			col : 'c1',
+			tit : 'url',
+		}, {
+			col : 'c2',
+			tit : '菜单类型',
+		}, ]; 
+	
+		inf_dtbl.query={btn:'.d-query-btn'}; 
+		inf_dtbl.query.filter=function(){
+			return {q0:$('#d-query-text').val()};
+		};
+		$(function() {
+			tpl_obj.tblctl=$('#tblcont').datatable(inf_dtbl).load();
+		});
+	</script>
+</body>
+</html>
