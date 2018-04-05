@@ -46,7 +46,6 @@ class FossilController extends \Admin\Common\AdminController
     function operate()
     {
         $raw = $this->getFormParam();
-        echo '<pre/>';print_r($raw);die;
         $o = M()->table('dn_fossil');
         if (isset($raw['classification']) && $raw['classification']) {
             $raw['classification'] = explode("\n", $raw['classification']);
@@ -84,7 +83,8 @@ class FossilController extends \Admin\Common\AdminController
             'altitude' => isset($raw['altitude']) ? $raw['altitude'] : '',
             'abstract' => isset($raw['abstract']) ? $raw['abstract'] : '',
             'description' => isset($raw['description']) ? $raw['description'] : '',
-            'photo' => isset($raw['photo']) ? $raw['photo'] : '',
+            'photo' => isset($raw['photo']) ? $this->photoData($raw['photo']) : '',
+            'restore_photo' => isset($raw['rphoto']) ? $this->photoData($raw['rphoto']) : '',
             'storage_name' => isset($raw['storage_name']) ? $raw['storage_name'] : '',
             'storage_no' => isset($raw['storage_no']) ? $raw['storage_no'] : '',
             'num' => isset($raw['num']) ? $raw['num'] : 0,
@@ -122,13 +122,46 @@ class FossilController extends \Admin\Common\AdminController
             if (isset($up['get_time'])) {
                 $up['get_time'] = strtotime($raw['get_time']);
             }
-            $up['ctime'] = time();
+            $up['photo'] = isset($raw['photo']) ? $this->photoData($raw['photo']) : '';
+            $up['restore_photo'] = isset($raw['rphoto']) ? $this->photoData($raw['rphoto']) : '';
+            $up['utime'] = time();
             $r = $o->save($up);
             if ($r === false) {
                 $this->error();
             }
             return $this->detail($id);
         }
+    }
+
+    protected function photoData($data)
+    {
+        if (!$data) {
+            return '';
+        }
+        $ret = [];
+        $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
+        $pattern = "/^{$host}/";
+        foreach ($data as $item) {
+            $ret[] = preg_replace($pattern, '', $item['url']);
+        }
+        return $ret ? implode("\n", $ret) : '';
+    }
+
+    protected function dePhotoData($data)
+    {
+        if (!$data) {
+            return [];
+        }
+        $data = explode("\n", $data);
+        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $ret = $single = [];
+        foreach ($data as $item) {
+            $single = [
+                'url' => $host . $item
+            ];
+            $ret[] = $single;
+        }
+        return $ret;
     }
 
     public function detail($id = 0)
@@ -168,8 +201,8 @@ class FossilController extends \Admin\Common\AdminController
                 'description' => $ret['description'] ?: '',
             ],
             'photoInfo' => [
-                'photo' => $ret['photoInfo'] ?: '',
-                'restore_photo' => $ret['restore_photo'] ?: '',
+                'photo' => $this->dePhotoData($ret['photo']),
+                'restore_photo' => $this->dePhotoData($ret['restore_photo']),
             ],
             'storage' => [
                 'storage_name' => $ret['storage_name'],
