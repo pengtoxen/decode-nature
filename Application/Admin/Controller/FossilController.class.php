@@ -43,7 +43,7 @@ class FossilController extends \Admin\Common\AdminController
         $this->show($ret);
     }
 
-    function operate()
+    public function operate()
     {
         $raw = $this->getFormParam();
         $o = M()->table('dn_fossil');
@@ -88,7 +88,7 @@ class FossilController extends \Admin\Common\AdminController
             'storage_name' => isset($raw['storage_name']) ? $raw['storage_name'] : '',
             'storage_no' => isset($raw['storage_no']) ? $raw['storage_no'] : '',
             'num' => isset($raw['num']) ? $raw['num'] : 0,
-            'material' => isset($raw['material']) ? $raw['material'] : '',
+            'material' => isset($raw['material']) ? $this->materialData($raw['material']) : '',
             'status' => 1,
             'get_time' => isset($raw['get_time']) ? strtotime($raw['get_time']) : 0,
             'ctime' => time(),
@@ -124,6 +124,7 @@ class FossilController extends \Admin\Common\AdminController
             }
             $up['photo'] = isset($raw['photo']) ? $this->photoData($raw['photo']) : '';
             $up['restore_photo'] = isset($raw['rphoto']) ? $this->photoData($raw['rphoto']) : '';
+            $up['material'] = isset($raw['material']) ? $this->materialData($raw['material']) : '';
             $up['utime'] = time();
             $r = $o->save($up);
             if ($r === false) {
@@ -148,6 +149,37 @@ class FossilController extends \Admin\Common\AdminController
     }
 
     protected function dePhotoData($data)
+    {
+        if (!$data) {
+            return [];
+        }
+        $data = explode("\n", $data);
+        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $ret = $single = [];
+        foreach ($data as $item) {
+            $single = [
+                'url' => $host . $item
+            ];
+            $ret[] = $single;
+        }
+        return $ret;
+    }
+
+    protected function materialData($data)
+    {
+        if (!$data) {
+            return '';
+        }
+        $ret = [];
+        $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
+        $pattern = "/^{$host}/";
+        foreach ($data as $item) {
+            $ret[] = preg_replace($pattern, '', $item['url']);
+        }
+        return $ret ? implode("\n", $ret) : '';
+    }
+
+    protected function deMaterialData($data)
     {
         if (!$data) {
             return [];
@@ -210,7 +242,7 @@ class FossilController extends \Admin\Common\AdminController
                 'num' => $ret['num'],
             ],
             'attachment' => [
-                'material' => $ret['material'],
+                'material' => $this->deMaterialData($ret['material']),
             ],
         ];
         $this->show($ret);
