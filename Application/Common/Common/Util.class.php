@@ -189,10 +189,34 @@ class Util
         if (!$info) {
             return ['_c' => 0, '_m' => $upload->getError()];
         } else {
-            foreach ($info as $va) {
-                $url = '/' . $config['rootPath'] . $va['savepath'] . $va['savename'];
-                return ['_c' => 1, '_m' => '上传成功', 'data' => $url];
+            if (count($info) == 1) {
+                $return = [
+                    'url' => '/' . $config['rootPath'] . $info['file']['savepath'] . $info['file']['savename'],
+                    'name' => $info['file']['name'],
+                    'md5' => $info['file']['md5'],
+                    'sha1' => $info['file']['sha1'],
+                    'type' => $info['file']['type'],
+                    'size' => $info['file']['size'],
+                    'key' => $info['file']['key'],
+                    'savename' => $info['file']['savename'],
+                ];
+            } else {
+                $return = [];
+                foreach ($info as $va) {
+                    $data = [
+                        'url' => '/' . $config['rootPath'] . $va['savepath'] . $va['savename'],
+                        'name' => $va['name'],
+                        'md5' => $va['md5'],
+                        'sha1' => $va['sha1'],
+                        'type' => $va['type'],
+                        'size' => $va['size'],
+                        'key' => $va['key'],
+                        'savename' => $va['savename'],
+                    ];
+                    $return[] = $data;
+                }
             }
+            return ['_c' => 1, '_m' => '上传成功', 'data' => $return];
         }
         return ['_c' => 0, '_m' => '上传失败'];
     }

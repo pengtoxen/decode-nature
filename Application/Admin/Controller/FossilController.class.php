@@ -139,13 +139,13 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $ret = [];
         $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
         $pattern = "/^{$host}/";
-        foreach ($data as $item) {
-            $ret[] = preg_replace($pattern, '', $item['url']);
+        foreach ($data as &$item) {
+            $item['url'] = preg_replace($pattern, '', $item['url']);
+            unset($item['status']);
         }
-        return $ret ? implode("\n", $ret) : '';
+        return $data ? json_encode($data) : '';
     }
 
     protected function dePhotoData($data)
@@ -153,14 +153,10 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return [];
         }
-        $data = explode("\n", $data);
+        $ret = json_decode($data, true);
         $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
-        $ret = $single = [];
-        foreach ($data as $item) {
-            $single = [
-                'url' => $host . $item
-            ];
-            $ret[] = $single;
+        foreach ($ret as &$item) {
+            $item['url'] = $host . $item;
         }
         return $ret;
     }
@@ -170,13 +166,13 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $ret = [];
         $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
         $pattern = "/^{$host}/";
-        foreach ($data as $item) {
-            $ret[] = preg_replace($pattern, '', $item['url']);
+        foreach ($data as &$item) {
+            $item['url'] = preg_replace($pattern, '', $item['url']);
+            unset($item['status']);
         }
-        return $ret ? implode("\n", $ret) : '';
+        return $data ? json_encode($data) : '';
     }
 
     protected function deMaterialData($data)
@@ -184,14 +180,10 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return [];
         }
-        $data = explode("\n", $data);
+        $ret = json_decode($data, true);
         $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
-        $ret = $single = [];
-        foreach ($data as $item) {
-            $single = [
-                'url' => $host . $item
-            ];
-            $ret[] = $single;
+        foreach ($ret as &$item) {
+            $item['url'] = $host . $item;
         }
         return $ret;
     }
