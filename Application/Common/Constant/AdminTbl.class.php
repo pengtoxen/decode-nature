@@ -4,7 +4,7 @@ namespace Common\Constant;
 
 class AdminTbl
 {
-    const TBL_DN_USER = 'dn_USER';
+    const TBL_DN_USER = 'dn_user';
     const TBL_DN_FOSSIL = 'dn_fossil';
     const TBL_DN_GEO_AGE = 'dn_geo_age';
     const TBL_DN_LOCATION = 'dn_location';

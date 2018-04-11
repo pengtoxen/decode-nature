@@ -2,51 +2,71 @@
 
 namespace Admin\Controller;
 
-use Common\Common\Util;
+use Common\Common\AccessToken;
 use Common\Constant\AdminTbl;
 
-class LoginController extends \Admin\Common\AdminController
+class LoginController extends \Admin\Common\BaseController
 {
     public function login()
     {
         $raw = $this->getFormParam();
-        $uname = $raw['uname'];
-        $pass = sha1($raw['pass']);
+        $uname = trim($raw['username']);
+        $pass = trim($raw['password']);
         $o = M()->table(AdminTbl::TBL_DN_USER);
         $w = [
-            'uname' => $uname,
-            'pass' => $pass,
+            'username' => $uname,
         ];
         $o->where($w);
-        $ret = $o->find();
-        if (!$ret) {
+        $uinfo = $o->find();
+        if (!$uinfo) {
             $this->error();
         }
-        $this->show($ret);
+        $pHash = $uinfo['password'];
+        if (!password_verify($pass, $pHash)) {
+            $this->error();
+        }
+        $token = AccessToken::instance()->generateToken($uinfo);
+        $this->show($token);
     }
 
-    public function modify()
+    public function register()
     {
         $raw = $this->getFormParam();
-        $id = $raw['uid'];
-        $pass = sha1($raw['pass']);
+        $uname = trim($raw['username']);
+        $pass = trim($raw['password']);
         $o = M()->table(AdminTbl::TBL_DN_USER);
         $w = [
-            'id' => $id
+            'username' => $uname,
         ];
         $o->where($w);
-        $up = [
-            'pass' => $pass,
+        $uinfo = $o->find();
+        if ($uinfo) {
+            $this->error('用户名重复');
+        }
+        $o = M()->table(AdminTbl::TBL_DN_USER);
+        $add = [
+            'username' => $uname,
+            'password' => $this->passwordHash($pass),
         ];
-        $ret = $o->save($up);
-        if ($ret === false) {
+        $uid = $o->add($add);
+        if ($uid === false) {
             $this->error();
         }
-        $this->show();
+        $o = M()->table(AdminTbl::TBL_DN_USER);
+        $w = [
+            'id' => $uid,
+        ];
+        $o->where($w);
+        $uinfo = $o->find();
+        $token = AccessToken::instance()->generateToken($uinfo);
+        $this->show($token);
     }
 
-    public function getToken()
+    protected function passwordHash($password)
     {
-        
+        $options = [
+            'cost' => 12,
+        ];
+        return password_hash($password, PASSWORD_BCRYPT, $options);
     }
 }

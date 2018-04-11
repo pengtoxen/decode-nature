@@ -3,9 +3,8 @@
 namespace Admin\Controller;
 
 use Common\Common\Util;
-use Common\Constant\AdminTbl;
 
-class OpenController extends \Admin\Common\AdminController
+class OpenController extends \Admin\Common\BaseController
 {
     public function fClassification()
     {

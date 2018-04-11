@@ -48,7 +48,7 @@ class Crypt
 
     private $iv = '';
 
-    private $rndnum = 3;
+    private $rndnum = 6;
 
     protected function __construct()
     {}
