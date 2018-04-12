@@ -14,7 +14,8 @@ class AdminController extends BaseController
 
     protected function identify()
     {
-        $token = $_SERVER['token'];
+        $raw = $this->getFormParam();
+        $token = $raw['token'];
         if (!AccessToken::instance()->verifyToken($token)) {
             $this->error('无权限');
         }

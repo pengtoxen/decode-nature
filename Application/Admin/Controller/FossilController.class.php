@@ -139,7 +139,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
+        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
@@ -166,7 +166,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = $_SERVER['REQUEST_SCHEME'] . ':\/\/' . $_SERVER['HTTP_HOST'];
+        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
