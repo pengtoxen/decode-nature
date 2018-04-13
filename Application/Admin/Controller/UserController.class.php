@@ -3,14 +3,28 @@
 namespace Admin\Controller;
 
 use Common\Common\AccessToken;
-use Common\Common\Util;
+use Admin\Common\UserEnv;
 use Common\Constant\AdminTbl;
 
 class UserController extends \Admin\Common\AdminController
 {
+    public function info()
+    {
+        $info = UserEnv::instance()->getInfo();
+        $roles = UserEnv::instance()->getRoles();
+        $ret = [
+            'name' => $info['nickname'],
+            'avatar' => $info['headimg'],
+            'introduction' => '',
+            'roles' => $roles,
+        ];
+        $this->show($ret);
+    }
+
     public function logout()
     {
         AccessToken::instance()->destroy();
+        UserEnv::instance()->logout();
         $this->show();
     }
 
@@ -18,7 +32,7 @@ class UserController extends \Admin\Common\AdminController
     {
         $raw = $this->getFormParam();
         $id = $raw['uid'];
-        if($raw['password']){
+        if ($raw['password']) {
             $pass = $this->passwordHash(trim($raw['password']));
         }
         $o = M()->table(AdminTbl::TBL_DN_USER);

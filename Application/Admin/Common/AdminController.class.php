@@ -14,12 +14,11 @@ class AdminController extends BaseController
 
     protected function identify()
     {
-        $raw = $this->getFormParam();
-        $token = $raw['token'];
+        $token = $_SERVER['HTTP_X_TOKEN'];
         if (!AccessToken::instance()->verifyToken($token)) {
             $this->error('无权限');
         }
-        if (AccessToken::instance()->expired()) {
+        if (AccessToken::instance()->expired($token)) {
             $this->error('access_token无效');
         }
     }

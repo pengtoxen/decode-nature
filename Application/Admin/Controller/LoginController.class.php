@@ -2,6 +2,7 @@
 
 namespace Admin\Controller;
 
+use Admin\Common\UserEnv;
 use Common\Common\AccessToken;
 use Common\Constant\AdminTbl;
 
@@ -26,6 +27,7 @@ class LoginController extends \Admin\Common\BaseController
             $this->error();
         }
         $token = AccessToken::instance()->generateToken($uinfo);
+        UserEnv::instance()->setUid($uinfo['id']);
         $this->show($token);
     }
 
@@ -59,6 +61,7 @@ class LoginController extends \Admin\Common\BaseController
         $o->where($w);
         $uinfo = $o->find();
         $token = AccessToken::instance()->generateToken($uinfo);
+        UserEnv::instance()->setUid($uinfo['id']);
         $this->show($token);
     }
 
