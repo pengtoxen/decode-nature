@@ -2,6 +2,7 @@
 
 namespace Admin\Controller;
 
+use Admin\Common\UserEnv;
 use Common\Common\Util;
 use Common\Common\Pagination;
 use Common\Common\ID;
@@ -18,6 +19,7 @@ class FossilController extends \Admin\Common\AdminController
     {
         $o = M()->table('dn_fossil');
         $name = I('name_zh/s');
+        $w['uid'] = UserEnv::instance()->getUid();
         if ($name) {
             $w['name_zh'] = ['like', '%' . $name . '%'];
         }
@@ -66,6 +68,7 @@ class FossilController extends \Admin\Common\AdminController
             $raw['geo_age_name'] = $info ?: '';
         }
         $add = [
+            'uid' => UserEnv::instance()->getUid(),
             'classification_id' => isset($raw['classification_id']) ? $raw['classification_id'] : 0,
             'classification_id_arr' => isset($raw['classification']) ? implode("\n", $raw['classification']) : 0,
             'district_id' => isset($raw['district_id']) ? $raw['district_id'] : 0,
@@ -133,6 +136,7 @@ class FossilController extends \Admin\Common\AdminController
                 $up['material'] = isset($raw['material']) ? $this->materialData($raw['material']) : '';
             }
             $up['utime'] = time();
+            $up['uid'] = UserEnv::instance()->getUid();
             $r = $o->save($up);
             if ($r === false) {
                 $this->error();
@@ -201,6 +205,7 @@ class FossilController extends \Admin\Common\AdminController
         $o = M()->table('dn_fossil');
         $w = [
             'id' => $id,
+            'uid' => UserEnv::instance()->getUid(),
         ];
         $o->where($w);
         $ret = $o->find();
@@ -256,10 +261,11 @@ class FossilController extends \Admin\Common\AdminController
         $o = M()->table(AdminTbl::TBL_DN_FOSSIL);
         $w = [
             'id' => $raw['id'],
+            'uid' => UserEnv::instance()->getUid(),
         ];
         $o->where($w);
         $up = [
-            $raw['field'] => $raw['value'],
+            $raw['field'] => (int)$raw['value'],
         ];
         $r = $o->save($up);
         if ($r === false) {
@@ -277,6 +283,7 @@ class FossilController extends \Admin\Common\AdminController
         $o = M()->table(AdminTbl::TBL_DN_FOSSIL);
         $w = [
             'id' => $raw['id'],
+            'uid' => UserEnv::instance()->getUid(),
         ];
         $o->where($w);
         $r = $o->delete();
