@@ -122,9 +122,16 @@ class FossilController extends \Admin\Common\AdminController
             if (isset($up['get_time'])) {
                 $up['get_time'] = strtotime($raw['get_time']);
             }
-            $up['photo'] = isset($raw['photo']) ? $this->photoData($raw['photo']) : '';
-            $up['restore_photo'] = isset($raw['rphoto']) ? $this->photoData($raw['rphoto']) : '';
-            $up['material'] = isset($raw['material']) ? $this->materialData($raw['material']) : '';
+            if (isset($up['photo'])) {
+                $up['photo'] = isset($raw['photo']) ? $this->photoData($raw['photo']) : '';
+            }
+            if (isset($up['rphoto'])) {
+                $up['restore_photo'] = isset($raw['rphoto']) ? $this->photoData($raw['rphoto']) : '';
+                unset($up['rphoto']);
+            }
+            if (isset($up['material'])) {
+                $up['material'] = isset($raw['material']) ? $this->materialData($raw['material']) : '';
+            }
             $up['utime'] = time();
             $r = $o->save($up);
             if ($r === false) {
@@ -139,7 +146,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $host = str_replace('/', '\/', Util::uriHost());
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
@@ -154,9 +161,9 @@ class FossilController extends \Admin\Common\AdminController
             return [];
         }
         $ret = json_decode($data, true);
-        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $host = Util::uriHost();
         foreach ($ret as &$item) {
-            $item['url'] = $host . $item;
+            $item['url'] = $host . $item['url'];
         }
         return $ret;
     }
@@ -166,7 +173,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $host = str_replace('/', '\/', Util::uriHost());
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
@@ -181,9 +188,9 @@ class FossilController extends \Admin\Common\AdminController
             return [];
         }
         $ret = json_decode($data, true);
-        $host = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+        $host = Util::uriHost();
         foreach ($ret as &$item) {
-            $item['url'] = $host . $item;
+            $item['url'] = $host . $item['url'];
         }
         return $ret;
     }

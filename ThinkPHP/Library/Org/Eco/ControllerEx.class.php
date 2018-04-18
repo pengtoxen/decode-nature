@@ -60,7 +60,7 @@ class ControllerEx extends Controller
     }
 
 
-    protected function error($content = '', $msg = 'fail')
+    protected function error($msg = 'fail', $content = '')
     {
         $ret = [
             'code' => 1,

@@ -335,6 +335,11 @@ class Util
         return ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
     }
 
+    public static function uriHost()
+    {
+        return self::uriProtocol() . $_SERVER['HTTP_HOST'];
+    }
+
     public static function curlPost($url, $postFields)
     {
         $postFields = json_encode($postFields);
