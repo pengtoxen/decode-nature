@@ -233,7 +233,7 @@ class FossilController extends \Admin\Common\AdminController
                 'altitude' => $ret['altitude'],
             ],
             'description' => [
-                'abstract' => $ret['abstract'],
+                'abstract' => $ret['abstract'] ?: '',
                 'description' => $ret['description'] ?: '',
             ],
             'photoInfo' => [

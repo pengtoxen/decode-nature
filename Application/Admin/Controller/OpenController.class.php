@@ -26,7 +26,7 @@ class OpenController extends \Admin\Common\BaseController
 
     public function upload()
     {
-        $res = Util::upload(['savePath' => 'Specimen/Fossil/']);
+        $res = Util::upload(['savePath' => 'Specimen/Fossil/', 'exts' => ['png', 'jpg', 'jpeg', 'pdf', 'txt', 'docx', 'doc', 'xlsx', 'xls']]);
         if (!$res[_c]) {
             $this->error($res['_m']);
         }
