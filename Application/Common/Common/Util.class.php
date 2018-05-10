@@ -4,45 +4,6 @@ namespace Common\Common;
 
 class Util
 {
-    public static function getKey($arr, $id, $idName = 'id')
-    {
-        foreach ($arr as $key => $val) {
-            if ($val[$idName] == $id) {
-                return $key;
-            }
-        }
-        return null;
-    }
-
-    public static function getParent($arr, $id, $pidName = 'parent_id', $idName = 'id')
-    {
-        $key = self::getKey($arr, $id, $idName);
-        if ($key === null) {
-            return false;
-        }
-        if ($arr[$key][$pidName] == 0) {
-            return $arr[$key];
-        } else {
-            $id = $arr[$key][$pidName];
-            return self::getParent($arr, $id, $pidName);
-        }
-    }
-
-    public static function getParentArr($arr, $id, $pidName = 'parent_id', $idName = 'id', $return = [])
-    {
-        $key = self::getKey($arr, $id, $idName);
-        if ($key === null) {
-            return false;
-        }
-        if ($arr[$key][$pidName] == 0) {
-            return $return;
-        } else {
-            $id = $arr[$key][$pidName];
-            array_unshift($return, $id);
-            return self::getParentArr($arr, $id, $pidName, $idName, $return);
-        }
-    }
-
     public static function arrayGroupByKey($arr, $key)
     {
         $grouped = [];
@@ -75,19 +36,6 @@ class Util
     {
         json_decode($string);
         return (json_last_error() == JSON_ERROR_NONE);
-    }
-
-    public static function formatSQLToPHPTime($date, $timestamp = false)
-    {
-        if (strpos($date, 'T') !== false) {
-            $date = str_replace('T', ' ', $date);
-            $date = preg_replace('/\d{3}$/', '', $date);
-        }
-        $date = date('Y-m-d H:i:s', strtotime($date));
-        if ($timestamp) {
-            return strtotime($date);
-        }
-        return $date;
     }
 
     public static function detectEnv()
@@ -367,6 +315,117 @@ class Util
             }
         }
         curl_close($ch);
+        return $result;
+    }
+
+    public static function makeCustomLog($dirName, $log, $ext = '.log')
+    {
+        $dir = str_replace('\\', '/', APP_PATH . '/Runtime/Logs/Custom/' . $dirName . '/');
+        $fileName = $dir . date('Ymd', time()) . $ext;
+        if (!file_exists($dir)) {
+            @mkdir($dir, $mode = 0777, true);
+            chmod($dir, 0777);
+        }
+        //日志信息
+        if (is_array($log) || is_object($log)) {
+            $log = json_encode($log);
+        }
+        $logHead = date('Y-m-d H:i:s', time()) . "\n";
+        $logHead .= "-----------------------------------\n";
+        $logTail = "\n-----------------------------------\n\r\n\r";
+        $log = $logHead . $log . $logTail;
+        file_put_contents($fileName, $log, 0);
+    }
+
+    public static function getAge($birthday)
+    {
+        //格式化出生时间年月日
+        $byear = date('Y', $birthday);
+        $bmonth = date('m', $birthday);
+        $bday = date('d', $birthday);
+        //格式化当前时间年月日
+        $tyear = date('Y');
+        $tmonth = date('m');
+        $tday = date('d');
+        //开始计算年龄
+        $age = $tyear - $byear;
+        if ($bmonth > $tmonth || $bmonth == $tmonth && $bday > $tday) {
+            $age--;
+        }
+        return $age;
+    }
+
+    public static function shortUrl($long_url)
+    {
+        $api = 'http://api.t.sina.com.cn/short_url/shorten.json'; // json
+        $source = '4110768210';
+        $url_long = $long_url;
+        $request_url = sprintf($api . '?source=%s&url_long=%s', $source, $url_long);
+        $data = file_get_contents($request_url);
+        if (self::isJson($data)) {
+            return json_decode($data, true);
+        }
+        return $data;
+    }
+
+    //对象复制(深复制和浅复制)
+    public static function copy($obj, $deep = false)
+    {
+        if (!is_object($obj)) {
+            return $obj;
+        }
+        return $deep ? unserialize(serialize($obj)) : clone $obj;
+    }
+
+    /*
+     * 所有的组合
+     * $arrays = [
+     *  ['A1', 'A2', 'A3'],
+     *  ['B1', 'B2', 'B3'],
+     *  ['C1', 'C2'],
+     * ]
+     */
+    public static function getCombinations($arrays)
+    {
+        $result = array(array());
+        foreach ($arrays as $property => $property_values) {
+            $tmp = array();
+            foreach ($result as $result_item) {
+                foreach ($property_values as $property_value) {
+                    $tmp[] = array_merge($result_item, array($property => $property_value));
+                }
+            }
+            $result = $tmp;
+        }
+        return $result;
+    }
+
+
+    /*
+     * 所有的组合
+     * $arrays = [
+     *  ['A1', 'A2', 'A3'],
+     *  ['B1', 'B2', 'B3'],
+     *  ['C1', 'C2'],
+     * ]
+     */
+    public static function getCombinationsV2($arrays, $i = 0)
+    {
+        if (!isset($arrays[$i])) {
+            return array();
+        }
+        if ($i == count($arrays) - 1) {
+            return $arrays[$i];
+        }
+        $tmp = self::getCombinationsV2($arrays, $i + 1);
+        $result = array();
+        foreach ($arrays[$i] as $v) {
+            foreach ($tmp as $t) {
+                $result[] = is_array($t) ?
+                    array_merge(array($v), $t) :
+                    array($v, $t);
+            }
+        }
         return $result;
     }
 }
