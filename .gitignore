@@ -1,5 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gitignore
 .idea/
-Application/Runtime/Logs/Admin/18_04_04.log
-Application/Runtime/Temp/
+Application/Runtime/
+Uploads/
