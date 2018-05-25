@@ -20,7 +20,7 @@ define('APP_DEBUG',True);
 // 定义应用目录
 
 define('WEB_ROOT', realpath(__DIR__) . DIRECTORY_SEPARATOR);
-define('TEMPLATE_PATH',realpath(WEB_ROOT . '../public/Template') . DIRECTORY_SEPARATOR);
+define('TEMPLATE_PATH',realpath(WEB_ROOT . '/Template') . DIRECTORY_SEPARATOR);
 // define('TEMPLATE_PATH',realpath(WEB_ROOT . 'Views') . DIRECTORY_SEPARATOR);
 define('APP_PATH',WEB_ROOT . 'Application/');
 
