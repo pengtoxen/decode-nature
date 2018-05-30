@@ -330,11 +330,10 @@ class Util
         if (is_array($log) || is_object($log)) {
             $log = json_encode($log);
         }
-        $logHead = date('Y-m-d H:i:s', time()) . "\n";
-        $logHead .= "-----------------------------------\n";
-        $logTail = "\n-----------------------------------\n\r\n\r";
+        $logHead = '[' . date('Y-m-d H:i:s', time()) . ']';
+        $logTail = "\n";
         $log = $logHead . $log . $logTail;
-        file_put_contents($fileName, $log, 0);
+        file_put_contents($fileName, $log, FILE_APPEND);
     }
 
     public static function getAge($birthday)
@@ -427,5 +426,11 @@ class Util
             }
         }
         return $result;
+    }
+
+    public static function microtime_float()
+    {
+        list($usec, $sec) = explode(" ", microtime());
+        return ((float)$usec + (float)$sec);
     }
 }
