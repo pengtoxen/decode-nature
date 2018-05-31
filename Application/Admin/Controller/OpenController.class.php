@@ -2,7 +2,9 @@
 
 namespace Admin\Controller;
 
+use Common\Common\Qiniu;
 use Common\Common\Util;
+use Common\Constant\AdminConfig;
 
 class OpenController extends \Admin\Common\BaseController
 {
@@ -31,5 +33,20 @@ class OpenController extends \Admin\Common\BaseController
             $this->error($res['_m']);
         }
         $this->show($res);
+    }
+
+    public function callback()
+    {
+        $resp = Qiniu::instance()
+            ->setParam([
+                'callbackUrl' => AdminConfig::QINIU_CALLBACK_URL,
+                'callbackBodyType' => 'application/json',
+            ])
+            ->callbackFunc()
+            ->getResp();
+        if(!$resp){
+            $this->error();
+        }
+        $this->show($resp);
     }
 }

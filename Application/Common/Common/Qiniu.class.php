@@ -21,10 +21,7 @@ class Qiniu
     protected $cache = 'upload_token_cache';
     protected $keyToOverwrite = null;
     protected $token = null;
-    protected $resp = [
-        '_c' => 1,
-        'data' => [],
-    ];
+    protected $resp = null;
 
     public function __construct()
     {
@@ -41,6 +38,7 @@ class Qiniu
         foreach ($param as $k => $v) {
             $this->_param[$k] = $v;
         }
+        return $this;
     }
 
     protected function setAuth()
@@ -94,31 +92,57 @@ class Qiniu
 
     public function callbackFunc()
     {
-        $_body = file_get_contents('php://input');
-        $param = json_decode($_body, true);
-        $o = M()->table(AdminTbl::TBL_DN_FILES_INFO);
-        $add = [
-            'bucket' => $param['bucket'],
-            'fname' => $param['fname'],
-            'fkey' => $param['fkey'],
-            'fdes' => $param['fdes'],
-            'ctime' => time(),
-        ];
-        $ret = $o->add($add);
-        if ($ret === false) {
+        if (!$this->verifyCallback()) {
             return $this;
         }
-        $this->resp = [
-            '_c' => 0,
-            'data' => [
-                'cid' => $param['cid'],
+        $param = json_decode(file_get_contents('php://input'), true);
+        $o = M()->table(AdminTbl::TBL_DN_FILES_INFO);
+        $w = [
+            'fkey' => $param['fkey'],
+        ];
+        $file = $o->where($w)->find();
+        if (!$file) {
+            $add = [
+                'uid' => $param['uid'],
+                'bucket' => $param['bucket'],
+                'fname' => $param['fname'],
+                'fkey' => $param['fkey'],
+                'fdes' => $param['fdes'] !== 'null' ? $param['fdes'] : '',
+                'ctime' => time(),
+            ];
+            $o = M()->table(AdminTbl::TBL_DN_FILES_INFO);
+            $ret = $o->add($add);
+            if ($ret === false) {
+                return $this;
+            }
+            $this->resp = [
                 'bucket' => $param['bucket'],
                 'fname' => $param['fname'],
                 'fkey' => $param['fkey'],
                 'fdes' => $param['fdes'],
-            ],
-        ];
+            ];
+        } else {
+            $this->resp = [
+                'bucket' => $file['bucket'],
+                'fname' => $file['fname'],
+                'fkey' => $file['fkey'],
+                'fdes' => $file['fdes'],
+            ];
+        }
         return $this;
+    }
+
+    protected function verifyCallback()
+    {
+        $callbackBody = file_get_contents('php://input');
+        $contentType = $this->_param['callbackBodyType'];
+        $authorization = $_SERVER['HTTP_AUTHORIZATION'];
+        $url = $this->_param['callbackUrl'];
+        $fromQiniu = $this->auth->verifyCallback($contentType, $authorization, $url, $callbackBody);
+        if ($fromQiniu) {
+            return true;
+        }
+        return false;
     }
 
     public function getResp()

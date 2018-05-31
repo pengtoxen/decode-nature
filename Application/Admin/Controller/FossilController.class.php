@@ -6,6 +6,7 @@ use Admin\Common\UserEnv;
 use Common\Common\Util;
 use Common\Common\Pagination;
 use Common\Common\ID;
+use Common\Constant\AdminConfig;
 use Common\Constant\AdminTbl;
 
 class FossilController extends \Admin\Common\AdminController
@@ -150,7 +151,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = str_replace('/', '\/', Util::uriHost());
+        $host = str_replace('/', '\/', AdminConfig::QINIU_BASE_URL);
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
@@ -165,9 +166,8 @@ class FossilController extends \Admin\Common\AdminController
             return [];
         }
         $ret = json_decode($data, true);
-        $host = Util::uriHost();
         foreach ($ret as &$item) {
-            $item['url'] = $host . $item['url'];
+            $item['url'] = AdminConfig::QINIU_BASE_URL . $item['url'];
         }
         return $ret;
     }
@@ -177,7 +177,7 @@ class FossilController extends \Admin\Common\AdminController
         if (!$data) {
             return '';
         }
-        $host = str_replace('/', '\/', Util::uriHost());
+        $host = str_replace('/', '\/', AdminConfig::QINIU_BASE_URL);
         $pattern = "/^{$host}/";
         foreach ($data as &$item) {
             $item['url'] = preg_replace($pattern, '', $item['url']);
@@ -192,9 +192,8 @@ class FossilController extends \Admin\Common\AdminController
             return [];
         }
         $ret = json_decode($data, true);
-        $host = Util::uriHost();
         foreach ($ret as &$item) {
-            $item['url'] = $host . $item['url'];
+            $item['url'] = AdminConfig::QINIU_BASE_URL . $item['url'];
         }
         return $ret;
     }
