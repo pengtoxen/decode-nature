@@ -5,6 +5,7 @@ namespace Admin\Controller;
 use Common\Common\AccessToken;
 use Admin\Common\UserEnv;
 use Common\Common\Util;
+use Common\Constant\AdminConfig;
 use Common\Constant\AdminTbl;
 
 class UserController extends \Admin\Common\AdminController
@@ -96,7 +97,7 @@ class UserController extends \Admin\Common\AdminController
         if (!$url) {
             return '';
         }
-        $host = str_replace('/','\/',Util::uriHost());
+        $host = str_replace('/','\/',AdminConfig::QINIU_BASE_URL);
         $pattern = '/^'.$host.'/';
         return  preg_replace($pattern, '', $url);
     }
