@@ -288,6 +288,26 @@ class Util
         return self::uriProtocol() . $_SERVER['HTTP_HOST'];
     }
 
+    public static function isAjax()
+    {
+        if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+            if ('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH']))
+                return true;
+        }
+        return false;
+    }
+
+    public static function consanguinity()
+    {
+        if (strpos($_SERVER['HTTP_REFERER'], "http://" . $_SERVER['HTTP_HOST'] . "/") === 0) {
+            return true;
+        }
+        if (strpos($_SERVER['HTTP_REFERER'], "https://" . $_SERVER['HTTP_HOST'] . "/") === 0) {
+            return true;
+        }
+        return false;
+    }
+
     public static function curlPost($url, $postFields)
     {
         $postFields = json_encode($postFields);
