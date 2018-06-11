@@ -453,4 +453,46 @@ class Util
         list($usec, $sec) = explode(" ", microtime());
         return ((float)$usec + (float)$sec);
     }
+
+    /**
+    $arr = [
+        [
+        'id' => 1,
+        'pid' => 0,
+        'title' => '父亲',
+        ],
+        [
+        'id' => 2,
+        'pid' => 1,
+        'title' => '儿子',
+        ],
+        [
+        'id' => 3,
+        'pid' => 2,
+        'title' => '孙子',
+        ],
+        [
+        'id' => 4,
+        'pid' => 0,
+        'title' => '叔叔',
+        ],
+    ];
+    $res = buildTree($arr, 0, [4]);
+    echo '<pre/>';
+    print_r($res);
+    **/
+    public static function buildTree(array $elements, $parentId = 0, $exclude = [])
+    {
+        $branch = array();
+        foreach ($elements as $element) {
+            if (in_array($element['id'], $exclude)) {
+                continue;
+            }
+            if ($element['pid'] == $parentId) {
+                $element['children'] = buildTree($elements, $element['id'], $exclude);
+                $branch[] = $element;
+            }
+        }
+        return $branch;
+    }
 }
