@@ -1,1 +1,0 @@
-webpackJsonp([15],{bYdL:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={name:"editForm",components:{information:n("/6Dj").default}},i={render:function(){var e=this.$createElement;return(this._self._c||e)("information",{attrs:{"is-edit":!0}})},staticRenderFns:[]},o=n("VU/8")(r,i,!1,null,null,null);t.default=o.exports}});
