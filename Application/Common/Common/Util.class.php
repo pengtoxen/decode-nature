@@ -340,17 +340,16 @@ class Util
 
     public static function makeCustomLog($dirName, $log, $ext = '.log')
     {
-        $dir = str_replace('\\', '/', APP_PATH . '/Runtime/Logs/Custom/' . $dirName . '/');
+        $dir = APP_PATH . '/Runtime/Logs/Custom/' . $dirName;
         $fileName = $dir . date('Ymd', time()) . $ext;
-        if (!file_exists($dir)) {
-            @mkdir($dir, $mode = 0777, true);
-            chmod($dir, 0777);
+        if (!self::makeDir($dir)) {
+            return;
         }
         //日志信息
         if (is_array($log) || is_object($log)) {
             $log = json_encode($log);
         }
-        $logHead = '[' . date('Y-m-d H:i:s', time()) . ']';
+        $logHead = '[' . date('Y-m-d H:i:s', time()) . ']$$$$';
         $logTail = "\n";
         $log = $logHead . $log . $logTail;
         file_put_contents($fileName, $log, FILE_APPEND);
@@ -513,5 +512,31 @@ class Util
             }
         }
         return $return;
+    }
+
+    function array_flatten($array = null)
+    {
+        $result = array();
+        if (!is_array($array)) {
+            $array = func_get_args();
+        }
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $result = array_merge($result, array_flatten($value));
+            } else {
+                $result = array_merge($result, array($key => $value));
+            }
+        }
+        return $result;
+    }
+
+    public static function makeDir($dirName, $mode = 0777)
+    {
+        $dirName = str_replace('\\', '/', $dirName);
+        if (!file_exists($dirName)) {
+            @mkdir($dirName, $mode, true);
+            return chmod($dirName, $mode);
+        }
+        return false;
     }
 }
